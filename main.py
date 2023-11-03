@@ -6,20 +6,20 @@ import plotly.graph_objs as go
 import plotly.express as px
 
 # Load the dataset (replace 'YourDataset.csv' with your dataset file)
-data = pd.read_csv("Annual_Surface_Temperature_Change.csv")
+data = pd.read_csv("dataset/Annual_Surface_Temperature_Change.csv")
 
 # Load the deforestation dataset
-deforestation_data = pd.read_csv("annual-deforestation.csv")
+deforestation_data = pd.read_csv("dataset/annual-deforestation.csv")
 
 # Sample data for seasonal change
-season_data = pd.read_csv('season-wise-change.csv')
-co2_emissions_data = pd.read_csv("co-emissions-per-capita.csv")
-greenhouse = pd.read_csv(r'AGGI_Table.csv')
+season_data = pd.read_csv('dataset/season-wise-change.csv')
+co2_emissions_data = pd.read_csv("dataset/co-emissions-per-capita.csv")
+greenhouse = pd.read_csv(r'dataset/AGGI_Table.csv')
 
 # Load the dataset for global threats to biodiversity
-threat = pd.read_excel(r'threats.xlsx')
+threat = pd.read_excel(r'dataset/threats.xlsx')
 # Load Heat Content Anomaly data
-anomaly_data = pd.read_csv("C:anamoly.csv")
+anomaly_data = pd.read_csv("dataset/anamoly.csv")
 
 # Create a pie chart for threats using Plotly Express
 fig_threats = px.pie(threat, names='threats', values='percentage', title='Distribution of Threats to Biodiversity')
@@ -29,7 +29,7 @@ fig_threats.update_traces(textinfo='percent+label', pull=[0.1, 0.1, 0.1, 0.1, 0.
                 '#005D67'], line=dict(color='#ffffff', width=2)))
 
 # Load the hierarchical data from the provided dataset
-tree = pd.read_csv(r'treemap.csv')
+tree = pd.read_csv(r'dataset/treemap.csv')
 def create_indented_hierarchy(df, level_column, category_column, subcategory_column):
     hierarchy = []
 
